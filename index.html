@@ -1,0 +1,176 @@
+<!DOCTYPE html>\n<html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis SWOT Interaktif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .swot-block {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 250px;
+            border: 1px solid;
+        }
+        .swot-block h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+        .swot-block textarea {
+            flex-grow: 1;
+            border: none;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            resize: none;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .swot-block textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #print-area, #print-area * {
+                visibility: visible;
+            }
+            #print-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+            .swot-block textarea {
+                border: 1px solid #ccc !important;
+                background-color: #fff !important;
+            }
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-6{margin-bottom:1.5rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.flex{display:flex}.grid{display:grid}.h-5{height:1.25rem}.h-6{height:1.5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.max-w-6xl{max-width:72rem}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-6{gap:1.5rem}.rounded-lg{border-radius:0.5rem}.border-blue-300{--tw-border-opacity:1;border-color:rgb(147 197 253 / var(--tw-border-opacity, 1))}.border-green-300{--tw-border-opacity:1;border-color:rgb(134 239 172 / var(--tw-border-opacity, 1))}.border-red-300{--tw-border-opacity:1;border-color:rgb(252 165 165 / var(--tw-border-opacity, 1))}.border-yellow-300{--tw-border-opacity:1;border-color:rgb(253 224 71 / var(--tw-border-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-700{--tw-text-opacity:1;color:rgb(161 98 7 / var(--tw-text-opacity, 1))}.text-yellow-800{--tw-text-opacity:1;color:rgb(133 77 14 / var(--tw-text-opacity, 1))}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87 / var(--tw-bg-opacity, 1))}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:p-8{padding:2rem}}</style></head>
+<body class="bg-gray-100 p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-6 no-print">
+            <h1 class="text-2xl font-bold text-gray-800">Analisis SWOT Interaktif</h1>
+            
+            <button id="print-btn" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition-colors flex items-center">
+                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a8.25 8.25 0 018.25-8.25H19.5A2.25 2.25 0 0121.75 8.25v8.25a2.25 2.25 0 01-2.25 2.25h-5.25a8.25 8.25 0 01-8.25-8.25V6.75a2.25 2.25 0 012.25-2.25H6.75"></path>
+                </svg>
+                Cetak / Simpan PDF
+            </button>
+        </div>
+        
+        <div id="print-area" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Strengths -->
+            <div class="swot-block bg-green-100 border-green-300">
+                <h3 class="text-green-800">
+                    <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345h5.518a.562.562 0 01.32.959l-4.435 3.223a.563.563 0 00-.182.635l2.125 5.11a.562.562 0 01-.84.62l-4.435-3.223a.563.563 0 00-.654 0l-4.435 3.223a.562.562 0 01-.84-.62l2.125-5.111a.563.563 0 00-.182-.635L2.525 9.91a.562.562 0 01.32-.96h5.518a.563.563 0 00.475-.345L11.48 3.5z"></path></svg>
+                    Strengths (Kekuatan)
+                </h3>
+                <p class="text-xs text-green-700 mb-2">Faktor internal yang positif. Apa keunggulan yang Anda miliki?</p>
+                <textarea placeholder="Contoh:
+- Tim yang solid dan kompeten.
+- Memiliki akses ke bahan baku unik.
+- Inovasi produk yang belum ada di pasaran.">- Inovasi bahan baku: Mengolah pakis yang umumnya dikonsumsi sebagai sayuran menjadi kukis manis dengan nilai tambah.
+- Identitas lokal yang kuat: Mengangkat potensi pangan lokal Trawas, Mojokerto, sebagai ciri khas produk.
+- Diferensiasi produk: Menawarkan alternatif kukis yang berbeda dari produk berbahan dasar tepung konvensional saja.
+- Konsep bisnis berkelanjutan: Berpotensi meningkatkan nilai ekonomi tanaman lokal melalui diversifikasi olahan pangan.</textarea>
+            </div>
+
+            <!-- Weaknesses -->
+            <div class="swot-block bg-yellow-100 border-yellow-300">
+                <h3 class="text-yellow-800">
+                    <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+                    Weaknesses (Kelemahan)
+                </h3>
+                <p class="text-xs text-yellow-700 mb-2">Faktor internal yang negatif. Apa kekurangan yang perlu Anda perbaiki?</p>
+                <textarea placeholder="Contoh:
+- Brand belum dikenal luas.
+- Modal awal yang terbatas.
+- Kapasitas produksi masih kecil.">- Penerimaan konsumen belum teruji: Penggunaan pakis dalam kukis manis berpotensi menimbulkan keraguan terhadap rasa dan tekstur.
+- Standardisasi bahan baku: Karakteristik pakis dapat berbeda berdasarkan jenis, usia panen, dan proses pengolahan sehingga konsistensi produk perlu dijaga.
+- Keterbatasan data produk: Diperlukan pengujian kandungan gizi, daya simpan, dan keamanan pangan untuk mendukung klaim produk.
+- Skala produksi awal: Kapasitas produksi dan efisiensi biaya berpotensi terbatas selama tahap pengembangan usaha.</textarea>
+            </div>
+
+            <!-- Opportunities -->
+            <div class="swot-block bg-blue-100 border-blue-300">
+                <h3 class="text-blue-800">
+                    <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-11.25a6.01 6.01 0 00-1.5-11.25m0 0A23.953 23.953 0 0112 21a23.953 23.953 0 01-1.5-11.25m1.5 11.25c.383.217.75.424 1.11.608m-1.11-.608a1.125 1.125 0 01-2.22 0m2.22 0a1.125 1.125 0 00-2.22 0m1.11.608c-.383.217-.75.424-1.11.608m0 0a6.003 6.003 0 01-4.5 0m4.5 0a6.003 6.003 0 00-4.5 0m0 0a23.953 23.953 0 01-1.5 11.25a23.953 23.953 0 011.5 11.25m0 0c-.383.217-.75.424-1.11.608m1.11-.608a1.125 1.125 0 00-2.22 0m2.22 0a1.125 1.125 0 01-2.22 0m-1.11-.608c.383.217.75.424 1.11.608m-4.5 0a6.003 6.003 0 014.5 0"></path></svg>
+                    Opportunities (Peluang)
+                </h3>
+                <p class="text-xs text-blue-700 mb-2">Faktor eksternal yang positif. Peluang apa yang bisa Anda manfaatkan?</p>
+                <textarea placeholder="Contoh:
+- Tren pasar gaya hidup ramah lingkungan meningkat.
+- Dukungan pemerintah untuk UMKM.
+- Belum banyak pesaing di segmen yang sama.">- Pasar pangan inovatif: Peluang memasuki segmen konsumen yang tertarik mencoba camilan dengan bahan baku tidak biasa.
+- Potensi ekonomi lokal: Peluang membangun rantai pasok bersama pemasok atau petani lokal di wilayah Trawas.
+- Pemasaran berbasis cerita produk: Keunikan pakis sebagai bahan kukis dapat menjadi daya tarik konten digital dan promosi berbasis kearifan lokal.
+- Ekspansi pasar: Potensi penjualan melalui bazar, kompetisi kewirausahaan, toko oleh-oleh, dan platform perdagangan digital.</textarea>
+            </div>
+
+            <!-- Threats -->
+            <div class="swot-block bg-red-100 border-red-300">
+                <h3 class="text-red-800">
+                    <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"></path></svg>
+                    Threats (Ancaman)
+                </h3>
+                <p class="text-xs text-red-700 mb-2">Faktor eksternal yang negatif. Ancaman apa yang harus Anda waspadai?</p>
+                <textarea placeholder="Contoh:
+- Perubahan peraturan pemerintah.
+- Munculnya pesaing besar dengan harga lebih murah.
+- Fluktuasi harga bahan baku.">- Persaingan produk substitusi: Kukis konvensional dan camilan sehat yang telah dikenal konsumen dapat lebih mudah mendapatkan kepercayaan pasar.
+- Persepsi konsumen: Anggapan bahwa pakis hanya cocok untuk masakan gurih dapat menghambat minat mencoba produk.
+- Ketidakpastian pasokan: Ketersediaan pakis yang memenuhi standar keamanan dan kualitas pangan dapat berubah menurut musim serta kondisi lingkungan.
+- Tuntutan regulasi pangan: Pemenuhan persyaratan keamanan, perizinan, pelabelan, dan ketentuan klaim gizi dapat menjadi tantangan ketika usaha berkembang.</textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('print-btn').addEventListener('click', function() {
+            window.print();
+        });
+
+        // Unduh salinan HTML yang menyimpan isi semua kolom SWOT.
+        document.getElementById('download-html-btn').addEventListener('click', function() {
+            const copy = document.documentElement.cloneNode(true);
+            const originalFields = document.querySelectorAll('textarea');
+            const copiedFields = copy.querySelectorAll('textarea');
+
+            originalFields.forEach((field, index) => {
+                copiedFields[index].textContent = field.value;
+            });
+
+            // Tombol unduh tidak perlu ada di salinan hasil.
+            const downloadButton = copy.querySelector('#download-html-btn');
+            if (downloadButton) downloadButton.remove();
+
+            const blob = new Blob(
+                ['<!DOCTYPE html>\\n' + copy.outerHTML],
+                { type: 'text/html;charset=utf-8' }
+            );
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Analisis_SWOT_Sudah_Diisi.html';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+
+
+</body></html>
